@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Header from "./components/Header";
 import { Toaster } from "react-hot-toast";
+import Logout from "./pages/Logout";
 
 function App() {
   // const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
@@ -35,7 +36,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/logout" element={<Register />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
       <Toaster />
     </Router>

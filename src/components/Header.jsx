@@ -31,13 +31,15 @@ const Header = () => {
       </div>
 
       <article className="navigation">
-        <Link className="nav" to={"/"}>
-          Home
-        </Link>
         {isAuthenticated ? (
-          <Link className="nav" to={"/profile"}>
-            Profile
-          </Link>
+          <>
+            <Link className="nav" to={"/"}>
+              Home
+            </Link>
+            <Link className="nav" to={"/profile"}>
+              Profile
+            </Link>
+          </>
         ) : (
           <></>
         )}
@@ -52,9 +54,14 @@ const Header = () => {
             Logout
           </Link>
         ) : (
-          <Link className="nav" to={"/login"}>
-            Login
-          </Link>
+          <>
+            <Link className="nav" to={"/login"}>
+              Login
+            </Link>
+            <Link className="nav" to={"/register"}>
+              Sign Up
+            </Link>
+          </>
         )}
       </article>
     </nav>

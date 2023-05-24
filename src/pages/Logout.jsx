@@ -1,7 +1,7 @@
 import React from "react";
 
 const Logout = () => {
-  return <div>Click On login to View And use to do app</div>;
+  return <div className="logout">Logged out Successfully</div>;
 };
 
 export default Logout;

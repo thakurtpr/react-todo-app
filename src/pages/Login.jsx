@@ -34,6 +34,7 @@ const Login = () => {
     }
   };
   if (isAuthenticated) return <Navigate to={"/"} />;
+
   return (
     <div className="login-box">
       <div className="login-header">

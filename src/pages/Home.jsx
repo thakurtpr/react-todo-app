@@ -11,7 +11,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [tasks, setTasks] = useState([]);
   const [refresh, setRefresh] = useState(false);
-  const { isAuthenticated } = useContext(Context);
+  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 
   const updateHandler = async (id) => {
     try {
@@ -79,14 +79,13 @@ const Home = () => {
       })
       .then((res) => {
         setTasks(res.data.tasks);
+        setIsAuthenticated(true);
       })
       .catch((e) => {
         toast.error(e.response.data.message);
       });
   }, [refresh]);
-  if (!isAuthenticated) {
-    return <Navigate to={"/login"} />;
-  }
+
   return (
     <div className="home_container">
       <form onSubmit={submitHandler}>
