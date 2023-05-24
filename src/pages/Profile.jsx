@@ -2,12 +2,13 @@ import { useContext, useEffect } from "react";
 import { Context, server } from "../main";
 // import { Navigate } from "react-router-dom";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 const Profile = () => {
   // const { isAuthenticated, loading, user } = useContext(Context);
-  // if (!isAuthenticated) return <Navigate to={"/login"} />;
 
-  const { user, setUser, setIsAuthenticated, setLoading } = useContext(Context);
+  const { user, setUser, isAuthenticated, setIsAuthenticated, setLoading } =
+    useContext(Context);
   useEffect(() => {
     setLoading(true);
     axios
@@ -25,6 +26,7 @@ const Profile = () => {
         setLoading(false);
       });
   }, []);
+  if (!isAuthenticated) return <Navigate to={"/login"} />;
 
   return (
     <div className="profile">
