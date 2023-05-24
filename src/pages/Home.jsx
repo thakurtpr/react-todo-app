@@ -85,6 +85,7 @@ const Home = () => {
         toast.error(e.response.data.message);
       });
   }, [refresh]);
+  if (!isAuthenticated) return <Navigate to={"/login"} />;
 
   return (
     <div className="home_container">
