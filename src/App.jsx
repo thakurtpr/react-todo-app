@@ -2,8 +2,8 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Profile from "./pages/Profile";
 import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 import Header from "./components/Header";
 import { Toaster } from "react-hot-toast";
 import Logout from "./pages/Logout";
